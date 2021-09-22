@@ -73,6 +73,7 @@ class Birthday
         $allEmployees = $this->getEmployees();
         $excludedEmployeeIds = $this->getEmployeesNotToSendWishes();
         $employees = collect($allEmployees)->whereNull('employmentEndDate')->whereNotNull('dateOfBirth')->whereNotIn('id', $excludedEmployeeIds);
+
         foreach ($employees as $employee) {
             if ($this->isEmployeeBirthday($employee) && !$employee->employmentEndDate) {
                 Mail::to($this->birthdayMail)->send(new BirthdayWish($employee));
@@ -103,10 +104,9 @@ class Birthday
 
     /**
      * Check if its employee work anniversary
-     * @param $dateOfBirth
-     * @param $employeeStartDate
+     * @param $employee
      */
-    public function isEmployeeWorkAnniversary($dateOfBirth, $employeeStartDate)
+    public function isEmployeeWorkAnniversary($employee)
     {
         //TODO - Check if employee work anniversary
     }
