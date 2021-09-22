@@ -19,8 +19,8 @@ This project uses a birthday service as below:
 app/Services 
 │   Birthday.php
 ```
-Test Can be found in 
+Test Can be found in the following directory:
 ```
-tests/Unit
-│  TestBirthday.php
+tests/Feature
+│  BirthdayTest.php
 ```
