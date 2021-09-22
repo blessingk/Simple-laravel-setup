@@ -12,6 +12,10 @@ php artisan key:generate
 ```
 2. Navigate to http://127.0.0.1:8000/birthdays
 3. Check the inbox you should receive some birthday wishes
+4. Birthday wishes can also be sent by running the command below in the project directory
+```birthday command
+php artisan birthday:wish
+```
 
 ## Project structure
 This project uses a birthday service as below:
