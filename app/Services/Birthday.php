@@ -75,7 +75,7 @@ class Birthday
         $employees = collect($allEmployees)->whereNull('employmentEndDate')->whereNotNull('dateOfBirth')->whereNotIn('id', $excludedEmployeeIds);
 
         foreach ($employees as $employee) {
-            if ($this->isEmployeeBirthday($employee) && !$employee->employmentEndDate) {
+            if ($this->isEmployeeBirthday($employee)) {
                 Mail::to($this->birthdayMail)->send(new BirthdayWish($employee));
             }
         }
