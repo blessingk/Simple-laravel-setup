@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 class Birthday
 {
-    private $realmEndpoint = 'https://interview-assessment-1.realmdigital.co.za/';
+    private $endpoint = 'https://interview-assessment-1.realmdigital.co.za/';
     private $birthdayMail  = 'birthdays@realmdigital.co.za';
 
     /**
@@ -19,7 +19,7 @@ class Birthday
     {
         $curl = curl_init();
         curl_setopt_array($curl, [
-            CURLOPT_URL =>  $this->realmEndpoint . 'employees',
+            CURLOPT_URL =>  $this->endpoint . 'employees',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -46,7 +46,7 @@ class Birthday
     {
         $curl = curl_init();
         curl_setopt_array($curl, [
-            CURLOPT_URL =>  $this->realmEndpoint . 'do-not-send-birthday-wishes',
+            CURLOPT_URL =>  $this->endpoint . 'do-not-send-birthday-wishes',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
